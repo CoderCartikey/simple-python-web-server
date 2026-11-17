@@ -118,36 +118,6 @@ Connection: close
 | Unit 5: Application layer | HTTP request/response messages, HTML, methods, headers, and status codes are implemented directly. |
 | Unit 2: Data link layer | The TCP/IP data sent through the socket is ultimately carried by the local network interface and Ethernet/Wi-Fi frames. |
 
-## Viva questions and short answers
-
-### Why is TCP used here?
-
-HTTP needs a reliable byte stream. TCP establishes a connection and ensures
-that bytes arrive in order and are retransmitted when necessary.
-
-### What is the difference between an IP address and a port?
-
-An IP address identifies a host or interface. A port identifies a process or
-service on that host. This server uses the loopback IP `127.0.0.1` and port
-`8080`.
-
-### What does `200`, `404`, and `405` mean?
-
-- `200 OK`: the request succeeded.
-- `404 Not Found`: the requested route does not exist.
-- `405 Method Not Allowed`: the route/server does not support the requested
-  HTTP method; this server allows only `GET`.
-
-### What is the role of `Content-Length`?
-
-It tells the client how many bytes belong to the response body. The server
-calculates it from the UTF-8 encoded HTML body.
-
-### Is this a production web server?
-
-No. It is intentionally small for learning. It supports one request per
-connection, has no TLS, authentication, caching, advanced HTTP parsing, or
-concurrent worker pool.
 
 ## Suggested project-record structure
 
